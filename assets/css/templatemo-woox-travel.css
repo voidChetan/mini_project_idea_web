@@ -1460,8 +1460,8 @@ About Page Style
 }
 
 .more-about {
-  margin-top: 120px;
-  padding-bottom: 120px;
+  margin-top: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
 
@@ -1976,14 +1976,13 @@ Deals Page Style
 
 .amazing-deals .item .image {
   border-top-left-radius: 23px;
-  border-bottom-left-radius: 23px;
+  border-top-right-radius: 23px;
   overflow: hidden;
 }
 
 .amazing-deals .item {
   background-color: #f7f7f7;
-  border-radius: 23px;
-  padding-right: 30px;
+  border-radius: 23px; 
   margin-bottom: 30px;
 }
 
@@ -1999,6 +1998,7 @@ Deals Page Style
   font-weight: 700;
   padding-bottom: 25px;
   margin-bottom: 10px;
+  margin-top: 10px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -2018,10 +2018,10 @@ Deals Page Style
 }
 
 .amazing-deals .item p {
-  padding-top: 25px;
+  padding-top: 15px;
   margin-top: 10px;
   border-top: 1px solid #ddd;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .amazing-deals ul.page-numbers {
