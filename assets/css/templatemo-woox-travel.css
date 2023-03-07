@@ -946,7 +946,7 @@ Visit Country Style
   position: relative;
   margin-bottom: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 2px solid #22b3c1;
 }
 
 .visit-country .last-item {
@@ -1363,6 +1363,10 @@ About Page Style
 .main-page em {
   font-style: normal;
   color: #22b3c1;
+}
+
+.float-right {
+  float: right;
 }
 
 .weekly-offers .item .thumb .text h6 {
