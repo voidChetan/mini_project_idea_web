@@ -152,7 +152,7 @@
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseOne" aria-expanded="true"
                                                     aria-controls="collapseOne">
-                                                   GET: https://akbarapi.funplanetresort.in/api/MyRequest/GetDepartments
+                                                   GET: http://onlinetestapi.gerasim.in/api/MovieBooking/GetAllTheaters
                                                 </button>
                                             </h2>
                                             <div id="collapseOne" class="accordion-collapse collapse show"
@@ -166,14 +166,28 @@
                                                         <div class="snippet" style="display: block;">
                                                             <div class="snippet_json" style="display: block;">
                                                               <pre><code>
-[
-  {
-    "DeptId": 0,
-    "DeptName": "string",
-    "DeptHead": "string",
-    "CreatedDate": "2023-03-11T14:18:08.436Z"
-  }
-]</code></pre>
+{
+    "message": "",
+    "result": true,
+    "data": [
+      {
+        "theaterId": 7,
+        "name": "Cinemax",
+        "city": "Nagpur",
+        "pinCode": "440044",
+        "totalScreens": 2,
+        "contactNo": "99887766"
+      },
+      {
+        "theaterId": 8,
+        "name": "Inox",
+        "city": "string",
+        "pinCode": "string",
+        "totalScreens": 0,
+        "contactNo": "string"
+      }
+    ]
+  }</code></pre>
                                                               
                                                             </div>
                                                         </div>
@@ -186,7 +200,7 @@
                                                 <button class="accordion-button collapsed" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                                     aria-expanded="false" aria-controls="collapseTwo">
-                                                    POST: https://akbarapi.funplanetresort.in/api/MyRequest/CreateDepartment
+                                                    GET: http://onlinetestapi.gerasim.in/api/MovieBooking/CrateTheaterAccount
                                                 </button>
                                             </h2>
                                             <div id="collapseTwo" class="accordion-collapse collapse"
@@ -200,14 +214,15 @@
                                                         <div class="snippet" style="display: block;">
                                                             <div class="snippet_json" style="display: block;">
                                                               <pre><code>
-[
-  {
-    "DeptId": 0,
-    "DeptName": "string",
-    "DeptHead": "string",
-    "CreatedDate": "2023-03-11T14:18:08.436Z"
-  }
-]</code></pre>
+{
+    "UserName": "string",
+    "Password": "string",
+    "Name": "string",
+    "City": "string",
+    "PinCode": "string",
+    "TotalScreens": 0,
+    "ContactNo": "string"
+  }</code></pre>
                                                               
                                                             </div>
                                                         </div>
