@@ -125,7 +125,15 @@ p {
 
 </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S49BSJYZN0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-S49BSJYZN0');
+</script>
 <body>
 
   <!-- ***** Preloader Start ***** -->
@@ -192,7 +200,7 @@ p {
         </div>
         <div class="col-6 showMobile" >
           <select class="mySelect" id="dpdlLanguage">
-            <option>Select Language</option> 
+            <option>Select language</option> 
           </select>
         </div>
         <div class="col-6 showMobile"  >
@@ -292,16 +300,16 @@ p {
         $("#languages").html('');
         $("#dpdlLanguage").html('');
         $.ajax({
-          url: "http://storeapi.gerasim.in/api/Interview/GetLanguage",
+          url: "https://freeapi.gerasim.in/api/Interview/GetAllLanguage",
           cache: false,
           success: function (result) { 
-            loadSubTopics(result[0].LanguageId);
-            result.forEach(element => {
-              let language = "<span id='angular_interview_questions_for_beginners' class='main-button' data-languageid=" + element.LanguageId + ">";
-              language = language + "<a href='#''>" + element.Language + "</a>";
+            loadSubTopics(result.data[0].languageId);
+            result.data.forEach(element => {
+              let language = "<span id='angular_interview_questions_for_beginners' class='main-button' data-languageid=" + element.languageId + ">";
+              language = language + "<a href='#''>" + element.language + "</a>";
               language = language + " </span>";
               $("#languages").append(language);
-              let lang = "<option value='" + element.LanguageId + "'  data-languageid=" + element.LanguageId + "> " + element.Language + " </option>" 
+              let lang = "<option value='" + element.languageId + "'  data-languageid=" + element.languageId + "> " + element.language + " </option>" 
               $("#dpdlLanguage").append(lang);
             });
           }
@@ -310,16 +318,16 @@ p {
 
     function loadSubTopics(lanId) {
         $.ajax({
-          url: "http://storeapi.gerasim.in/api/Interview/GetLanguageTopicById/" + lanId,
+          url: "https://freeapi.gerasim.in/api/Interview/GetLanguageTopicById?id=" + lanId,
           cache: false,
           success: function (result) { 
             $("#subTopics").html('');
             $("#dpdlTopics").html('')
-            loadQuestions(result[0].LanguageTopicId);
-            result.forEach(element => {
-              let language = " <li class='subTopic' data-subid=" + element.LanguageTopicId + ">" + element.TopicName + " <i class='fa fa-chevron-right' ></i></li>";
+            loadQuestions(result.data[0].languageTopicId);
+            result.data.forEach(element => {
+              let language = " <li class='subTopic' data-subid=" + element.languageTopicId + ">" + element.topicName + " <i class='fa fa-chevron-right' ></i></li>";
               $("#subTopics").append(language);
-              let topcis = "<option value='"+element.LanguageTopicId+"' data-languageid=" + element.LanguageTopicId + "> " + element.TopicName + " </option>"
+              let topcis = "<option value='"+element.languageTopicId+"' data-languageid=" + element.languageTopicId + "> " + element.topicName + " </option>"
               $("#dpdlTopics").append(topcis);
               
             });
@@ -330,16 +338,16 @@ p {
       function loadQuestions(lanId) {
         debugger;
           $.ajax({
-            url: "https://storeapi.gerasim.in/api/Interview/GetQuestionByTopicId/"+lanId+"",
+            url: "https://freeapi.gerasim.in/api/Interview/GetQuestionByTopicId?id="+lanId+"",
             cache: false, 
              type: 'GET',
              data: "", 
             success: function (result) { 
               $(".questions").html('');
               let index = 1;
-              result.forEach(element => {
-                let question = "<h3 >" + index + ". " + element.Question + "</h3>";
-                question = question + "<p>" + element.Answer + "</p>";
+              result.data.forEach(element => {
+                let question = "<h3 >" + index + ". " + element.question + "</h3>";
+                question = question + "<p>" + element.answer + "</p>";
                 question = question + "<hr/>"; 
                 $(".questions").append(question);
                 index++;
